@@ -1,0 +1,50 @@
+body {
+    background-color: rgb(124, 192, 124);
+}
+
+.fullNameForm, .colorChange, .textTest, .addText {
+    background-color: rgba(50, 187, 85, 0.928);
+    border-radius: 8px;
+    color: black;
+    text-align: center;
+    width: 48%; 
+    padding: 6px;
+    margin: 10px;
+    border: 2px solid white;
+}
+
+.fullNameForm, .textTest {
+    float: left;
+    padding-bottom: 30px;
+
+}
+
+.colorChange, .addText {
+    float: right;
+    margin-top: -4.9%;
+
+}
+
+form {
+    display: inline;
+}
+
+input[type="text"] {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.colorChange button, .addText button {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto; 
+    cursor: pointer;
+}
+
+
+button[type="submit"] {
+    display: inline-block;
+    margin-left: 10px;
+    
+}

@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>INST377 - Lab 4</title>
+        <link rel="stylesheet" href="Shristi_Giri_Lab4CSS.css">
+    </head>
+    <body>
+        <header>
+            <h1 id="header">INST377 - Lab 4</h1>
+        </header>
+        <!--Div classes for different forms/buttons-->
+        <div class="fullNameForm">
+            <form id="fullNameForm" onsubmit="return nameAlert()">
+                <label for="fullName">Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+                <button type="submit">Alert Me!</button>
+            </form>
+        </div>
+        
+        <div class="colorChange">
+            <button type="submit" onclick="changeColor()">Change Color</button>
+        </div>
+        
+        <div class="textTest">
+            <form id="textTestForm" onsubmit="return textValidation()">
+                <label for="textTest">Text Tester:</label>
+                <input type="text" id="textTest" name="textTest" required>
+                <button type="submit">Validate Text</button>
+            </form>
+        </div>
+        
+        <div class="addText">
+            <button type="submit" onclick="addText()">Add Text</button>
+        </div>
+
+        <!--JS Functions-->
+        <script type="text/javascript">
+            function nameAlert() {
+                var name = document.getElementById('fullName').value;
+                alert('Hi ' + name + '!');
+                return false;
+            }
+
+            var isCurrentColor = true;
+            function changeColor() {
+                if (isCurrentColor) {
+                    document.body.style.backgroundColor = 'pink';
+                } else {
+                    document.body.style.backgroundColor = 'rgb(124, 192, 124)';
+                }
+                isCurrentColor = !isCurrentColor;
+            }
+
+            function textValidation() {
+                var textTestValue = document.getElementById('textTest').value;
+                var validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                if (validationRegex.test(textTestValue)) {
+                    alert('There is a special character...please remove!');
+                    return false;
+                }
+                return true;
+            }
+
+            function addText() {
+                var header = document.getElementById('header');
+                header.innerHTML += " - Adding Text";
+            }
+        </script>
+    </body>
+</html>
